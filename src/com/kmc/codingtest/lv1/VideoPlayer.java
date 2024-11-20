@@ -1,6 +1,6 @@
 package com.kmc.codingtest.lv1;
 
-/* https://school.programmers.co.kr/learn/courses/30/lessons/340213
+/*
 문제 설명
 당신은 동영상 재생기를 만들고 있습니다. 당신의 동영상 재생기는 10초 전으로 이동, 10초 후로 이동, 오프닝 건너뛰기 3가지 기능을 지원합니다. 각 기능이 수행하는 작업은 다음과 같습니다.
 
@@ -44,7 +44,6 @@ commands의 원소는 "prev" 혹은 "next"입니다.
  */
 public class VideoPlayer {
     public String solution(String video_len, String pos, String op_start, String op_end, String[] commands) {
-        // 파라미터를 정수로 변환
         int posToInt = timeToSecond(pos);
         int videoLenToInt = timeToSecond(video_len);
         int location = posToInt;
@@ -56,16 +55,17 @@ public class VideoPlayer {
 
         for (String command : commands) {
             switch (command) {
-                case "prev":
-                    location = Math.max(0, location - 10);
+                case "prev" :
+                    if (location <= 10)
+                        location = 0;
+                    else
+                        location -= 10;
                     break;
-                case "next":
-                    location = Math.min(videoLenToInt, location + 10);
+                case "next" :
+                    location += 10;
+                    if (location >= videoLenToInt)
+                        location = videoLenToInt;
                     break;
-            }
-
-            if (opStartToInt <= location && location <= opEndToInt) {
-                location = opEndToInt;
             }
         }
 
