@@ -86,3 +86,50 @@ public class VideoPlayer {
         return String.format("%02d:%02d", minutes, seconds);
     }
 }
+
+/* 테스트 케이스
+public static void main(String[] args) {
+    VideoPlayer vp = new VideoPlayer();
+
+    // 테스트케이스 1: 기본 테스트
+    System.out.println("Test 1: " + vp.solution("34:33", "13:00", "00:55", "02:55", new String[]{"next", "prev"})); 
+    // 예상 출력: "13:00"
+
+    // 테스트케이스 2: 오프닝 구간 강제 이동
+    System.out.println("Test 2: " + vp.solution("10:55", "00:05", "00:15", "06:55", new String[]{"prev", "next", "next"})); 
+    // 예상 출력: "06:55"
+
+    // 테스트케이스 3: 오프닝 종료 직후 next
+    System.out.println("Test 3: " + vp.solution("07:22", "04:05", "00:15", "04:07", new String[]{"next"})); 
+    // 예상 출력: "04:17"
+
+    // 테스트케이스 4: 동영상 끝부분 테스트
+    System.out.println("Test 4: " + vp.solution("02:30", "02:20", "00:10", "00:20", new String[]{"next"})); 
+    // 예상 출력: "02:30"
+
+    // 테스트케이스 5: 동영상 시작 부분 테스트
+    System.out.println("Test 5: " + vp.solution("05:00", "00:05", "01:00", "02:00", new String[]{"prev"})); 
+    // 예상 출력: "00:00"
+
+    // 테스트케이스 6: 여러 명령 실행
+    System.out.println("Test 6: " + vp.solution("15:00", "05:00", "03:00", "04:00", new String[]{"next", "next", "prev", "prev"})); 
+    // 예상 출력: "05:00"
+
+    // 테스트케이스 7: 복잡한 오프닝 처리
+    System.out.println("Test 7: " + vp.solution("20:00", "02:50", "02:30", "03:00", new String[]{"prev", "next", "next", "prev"})); 
+    // 예상 출력: "03:10"
+
+    // 테스트케이스 8: 긴 동영상
+    System.out.println("Test 8: " + vp.solution("120:00", "100:00", "10:00", "15:00", new String[]{"prev", "prev", "prev"})); 
+    // 예상 출력: "99:30"
+
+    // 테스트케이스 9: 명령 없이 초기값 유지
+    System.out.println("Test 9: " + vp.solution("30:00", "10:00", "05:00", "06:00", new String[]{})); 
+    // 예상 출력: "10:00"
+
+    // 테스트케이스 10: 오프닝 구간에서 시작
+    System.out.println("Test 10: " + vp.solution("10:00", "01:45", "01:30", "03:00", new String[]{"next"})); 
+    // 예상 출력: "03:10"
+}
+
+ */
